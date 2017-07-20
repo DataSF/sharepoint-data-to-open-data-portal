@@ -1,0 +1,9 @@
+*.pyc
+configs/*.ini
+downloads/*
+configs/email*.yaml
+configs/secured_config.yaml
+socrata_config.yam
+node_modules/*
+logs/*
+configs/socrata_config.yaml
