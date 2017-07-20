@@ -108,8 +108,8 @@ class Emailer():
         #print self._server
         #print self._server_port
         #print server
-        server.starttls()
-        server.login(fromaddr, self._password)
+        #server.starttls()
+        #server.login(fromaddr, self._password)
         text = msg.as_string()
         server.sendmail(fromaddr, toaddr + [cc, bcc] , text)
         server.quit()
