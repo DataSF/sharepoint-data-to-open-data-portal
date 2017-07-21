@@ -3,10 +3,10 @@ username: SharePointConnect@SFGOV1.onmicrosoft.com
 spRootFolder: DataSF%20Shared%20Datasets/
 dlRootFolder: ./downloads
 datasetMappingCsv: eth_sharepoint_data_map_GT_071817.csv
-srcDataFolder: ./downloads
+srcDataFolder: /home/ubuntu/sharepoint-data-to-open-data-portal/downloads
 socrata_client_config_fname: socrata_config.yaml
 exception_logfile: exceptions.log
-log_dir: ./logs/
+log_dir: /home/ubuntu/sharepoint-data-to-open-data-portal/logs/
 app_name: Upload ETH Datasets from Sharepoint Site
 row_id_field: row_id
 dataset_name_field: Socrata Dataset Name
@@ -16,6 +16,6 @@ isLoaded: isLoaded
 src_records_cnt_field: SrcRecordsCnt
 base_url: data.sfgov.org
 base_url_qry: https://data.sfgov.org/resource/
-config_dir: ./configs/
+config_dir: /home/ubuntu/sharepoint-data-to-open-data-portal/configs/
 #email_config_file: email_config_gmail.yaml
 email_config_file: email_config_server.yaml
