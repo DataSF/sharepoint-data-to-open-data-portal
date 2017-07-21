@@ -57,14 +57,15 @@ class JobStatusEmailerComposer:
         msg = dataset['jobStatus'] + ": " + dataset[self.datasetNameField] + "-> Total Rows:" + str(dataset[self.source_records_cnt]) + ", Rows Inserted: " + str(dataset[self.rowsInserted])  + ", Link: http://"  + self.dataset_base_url + "/resource/" + dataset[self.fourXFour] + " <br><br> "
         return msg
 
-    def sendJobStatusEmail(self, finishedDataSets):
+    def sendJobStatusEmail(self, finishedDataSets, subject_line=None):
         msgBody  = ""
         for i in range(len(finishedDataSets)):
             #remove the column definitions, check if records where inserted
             dataset = self.sucessStatus( DictUtils.removeKeys(finishedDataSets[i], self.keysToRemove))
             msg = self.makeJobStatusMsg( finishedDataSets[i]  )
             msgBody  = msgBody  + msg
-        subject_line = self.getJobStatus()
+        if(subject_line is None):
+            subject_line = self.getJobStatus()
         email_attachment = self.makeJobStatusAttachment(finishedDataSets)
         e = Emailer(self.configItems)
         emailconfigs = e.setConfigs()

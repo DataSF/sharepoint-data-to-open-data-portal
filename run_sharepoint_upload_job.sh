@@ -63,7 +63,7 @@ fi
 npm_path_to_package_json=$path_to_main_dir
 config1="configs/"
 config_dir=$path_to_main_dir$config1
-upload_sharepoint_files="upload_sharepoint_files.py"
+upload_sharepoint_files="/upload_sharepoint_files.py"
 upload_sharepoint_files_config="base_config.yaml"
 
 #grab the data
