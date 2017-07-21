@@ -34,7 +34,7 @@ while getopts "h?:d:p:n:" opt; do
         ;;
     p)  python_path=$OPTARG
         ;;
-    n)  node_path=$OPTARG
+    n)  npm_path=$OPTARG
         ;;
     esac
 done
