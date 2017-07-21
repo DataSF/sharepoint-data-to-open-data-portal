@@ -92,7 +92,7 @@ def main():
     for dataset in datasets:
        dataset_info = {'Socrata Dataset Name': dataset['dataset_name'], 'SrcRecordsCnt':0, 'DatasetRecordsCnt':0, 'fourXFour': dataset['target_fbf'], 'row_id': '', 'isLoaded':'failed'}
        dataset_results.append(dataset_info)
-    dsse.sendJobStatusEmail(dataset_results, "ERROR: could NOT download files from Sharepoint")
+    dsse.sendJobStatusEmail(dataset_results, "FAILED: ERROR- could NOT download files from Sharepoint")
 
 
 if __name__ == "__main__":
