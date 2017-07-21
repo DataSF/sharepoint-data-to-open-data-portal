@@ -17,4 +17,5 @@ src_records_cnt_field: SrcRecordsCnt
 base_url: data.sfgov.org
 base_url_qry: https://data.sfgov.org/resource/
 config_dir: ./configs/
-email_config_file: email_config_gmail.yaml
+#email_config_file: email_config_gmail.yaml
+email_config_file: email_config_server.yaml

@@ -8,6 +8,7 @@ from PyLogger import *
 from PandasUtils import *
 from DictUtils import *
 from JobStatusEmailerComposer import *
+import glob
 
 def parse_opts():
   helpmsgConfigFile = 'Use the -c to add a config yaml file. EX: fieldConfig.yaml'
@@ -42,8 +43,14 @@ def parse_opts():
   return configFile, configDir
 
 
+def checkIfFilesDownloaded(downloadDirectory):
+  downLoadedFiles =  glob.glob(downloadDirectory)
+  if(len(downLoadedFiles)) > 0:
+    return True
+  return False
+
+
 def parseFile(directory, dataset):
-  print dataset
   df_dataset = PandasUtils.loadCsv(directory+ "/"+ dataset['file_name'])
   df_dataset =  PandasUtils.fillNaWithBlank(df_dataset)
   df_dataset_cols = list(df_dataset.columns)
@@ -65,21 +72,27 @@ def main():
   scrud = SocrataCRUD(client, clientItems, configItems, logger)
   sQobj = SocrataQueries(clientItems, configItems, logger)
   df_datasets = PandasUtils.loadCsv(configDir+configItems['datasetMappingCsv'])
-  datasets = PandasUtils.convertDfToDictrows(df_datasets)
-  for dataset in datasets:
-    datasetList = parseFile(configItems['srcDataFolder'], dataset)
-    dataset_info = {'Socrata Dataset Name': dataset['dataset_name'], 'SrcRecordsCnt':len(datasetList), 'DatasetRecordsCnt':0, 'fourXFour': dataset['target_fbf'], 'row_id': ''}
-    try:
-      dataset_info = scrud.postDataToSocrata(dataset_info, datasetList )
-      dataset_info['isLoaded'] = 'success'
-    except Exception, e:
-      print "ERROR OCCURRED"
-      print str(e)
-      dataset_info['isLoaded'] = 'failed'
-    dataset_results.append(dataset_info)
   dsse = JobStatusEmailerComposer(configItems, logger)
+  datasets = PandasUtils.convertDfToDictrows(df_datasets)
+  if(checkIfFilesDownloaded(configItems['srcDataFolder'])):
+    for dataset in datasets:
+      datasetList = parseFile(configItems['srcDataFolder'], dataset)
+      dataset_info = {'Socrata Dataset Name': dataset['dataset_name'], 'SrcRecordsCnt':len(datasetList), 'DatasetRecordsCnt':0, 'fourXFour': dataset['target_fbf'], 'row_id': ''}
+      try:
+        dataset_info = scrud.postDataToSocrata(dataset_info, datasetList )
+        dataset_info['isLoaded'] = 'success'
+      except Exception, e:
+        print "ERROR OCCURRED"
+        print str(e)
+        dataset_info['isLoaded'] = 'failed'
+      dataset_results.append(dataset_info)
+  else:
+    print "ERRRRROR did not download files"
+    for dataset in datasets:
+       dataset_info = {'Socrata Dataset Name': dataset['dataset_name'], 'SrcRecordsCnt':0, 'DatasetRecordsCnt':0, 'fourXFour': dataset['target_fbf'], 'row_id': '', 'isLoaded':'failed'}
+       dataset_results.append(dataset_info)
   dsse.sendJobStatusEmail(dataset_results)
-  print dataset_results
+
 
 if __name__ == "__main__":
     main()
