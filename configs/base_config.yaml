@@ -2,7 +2,7 @@ siteUrl: https://sfgov1.sharepoint.com/sites/ETH/
 username: SharePointConnect@SFGOV1.onmicrosoft.com
 spRootFolder: DataSF%20Shared%20Datasets/
 dlRootFolder: ./downloads
-datasetMappingCsv: eth_sharepoint_data_map_GT_071817.csv
+datasetMappingCsv: eth_sharepoint_data_map_GT.csv
 srcDataFolder: /home/ubuntu/sharepoint-data-to-open-data-portal/downloads
 socrata_client_config_fname: socrata_config.yaml
 exception_logfile: exceptions.log
