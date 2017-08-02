@@ -43,7 +43,7 @@ class PandasUtils:
   def loadCsv(fullpath):
     df = None
     try:
-      df = pd.read_csv(fullpath)
+     df = pd.read_csv(fullpath,  encoding='cp1252')
     except Exception, e:
       print str(e)
     return df

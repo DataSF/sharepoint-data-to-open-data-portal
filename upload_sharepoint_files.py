@@ -1,6 +1,12 @@
-# coding: utf-8
+
 
 #!/usr/bin/env python
+# encoding=utf8  
+import sys  
+
+reload(sys)  
+sys.setdefaultencoding('utf8')
+
 from ConfigUtils import *
 from SocrataStuff import *
 from optparse import OptionParser
@@ -51,7 +57,11 @@ def checkIfFilesDownloaded(downloadDirectory):
 
 
 def parseFile(directory, dataset):
+  #@print "******"
+  #print dataset
   df_dataset = PandasUtils.loadCsv(directory+ "/"+ dataset['file_name'])
+  print 
+  #print df_dataset
   df_dataset =  PandasUtils.fillNaWithBlank(df_dataset)
   df_dataset_cols = list(df_dataset.columns)
   df_dataset_cols_lower =  [column.lower().replace(" ", "_").replace("-", "_").replace("/", "_") for column in df_dataset_cols]
@@ -83,7 +93,18 @@ def main():
         dataset_info['isLoaded'] = 'success'
       except Exception, e:
         print "ERROR OCCURRED"
-        print str(e)
+	#decodedList = []
+	#for item in datasetList:
+	#    decodedList.append({str(k).encode('utf-8').strip(): str(v).encode('utf-8').strip() for (k,v) in item.iteritems()})
+	#print 
+	#print "****dataset list**"
+        #print decodedList
+	#try:
+	#   dataset_info = scrud.postDataToSocrata(dataset_info, decodedList )
+        #   dataset_info['isLoaded'] = 'success'
+	#except:
+        #   
+	print str(e)
         dataset_info['isLoaded'] = 'failed'
       dataset_results.append(dataset_info)
     dsse.sendJobStatusEmail(dataset_results)
@@ -92,7 +113,7 @@ def main():
     for dataset in datasets:
        dataset_info = {'Socrata Dataset Name': dataset['dataset_name'], 'SrcRecordsCnt':0, 'DatasetRecordsCnt':0, 'fourXFour': dataset['target_fbf'], 'row_id': '', 'isLoaded':'failed'}
        dataset_results.append(dataset_info)
-    dsse.sendJobStatusEmail(dataset_results, "FAILED: ERROR- could NOT download files from Sharepoint")
+    #dsse.sendJobStatusEmail(dataset_results, "FAILED: ERROR- could NOT download files from Sharepoint")
 
 
 if __name__ == "__main__":
