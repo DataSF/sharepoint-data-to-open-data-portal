@@ -1,8 +1,7 @@
 var email 	= require("emailjs/email");
 var server 	= email.server.connect({
    host:    "10.1.3.216", 
-   port: 25
-   ssl:     false
+   port: 25,
 });
  
 // send the message and get a callback with an error or details of the message that was sent
