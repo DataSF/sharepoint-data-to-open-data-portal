@@ -34,6 +34,13 @@ const context = {
   }
 }
 
+console.log()
+console.log(configs.siteUrl)
+console.log(cpass.decode(configs.password))
+console.log()
+
+
+
 let emailServer = email.server.connect({
    host:   emailConfigs.server_addr,
    port: emailConfigs.server_port,
