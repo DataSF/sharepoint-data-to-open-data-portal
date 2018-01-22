@@ -71,7 +71,7 @@ sppull(context, options)
   .catch(function (err) {
     console.log('Core error has happened', err)
     console.log(err)
-    emailServerFailureMsg.attachment = [{data:"<html><h1>" + emailConfigs.etl_failure_msg + "</h1><br><br>" + JSON.stringify(err) + "</html>", alternative:true}]
+    emailServerFailureMsg.attachment = [{data:"<html><h2>" + emailConfigs.etl_failure_msg + "</h2><br><br><p> See the error msg below </p>" + JSON.stringify(err) + "</html>", alternative:true}]
     // send the message and get a callback with an error or details of the message that was sent
     emailServer.send( emailServerFailureMsg, function(err, message) { console.log(err || message); });
 
