@@ -5,6 +5,7 @@
   "main": "main.js",
   "dependencies": {
     "cpass": "^2.0.0",
+    "emailjs": "^1.0.12",
     "prompt": "^1.0.0",
     "read-yaml": "^1.1.0",
     "rmdir-recursive": "0.0.1",

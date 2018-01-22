@@ -1,0 +1,10 @@
+erver_addr: yr email server addr
+server_port: port of your email server
+sender_addr: datasf.etl@sfgov.org
+etl_sender_addr: datasf.etl@sfgov.org
+sender_password:
+etl_recipients:  your email etl_recipients
+etl_recipients_failure:  your email etl_recipients for failure msg
+etl_failure_msg: ERROR-> Could not connect to Sharepoint server
+etl_failure_subject: FAILED: Upload ETH Datasets from Sharepoint Site JOB FAILED
+bcc: yr bcc addr
