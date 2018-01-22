@@ -1,0 +1,21 @@
+siteUrl: yr sharepoint site url 
+username: yr sharepoint username
+spRootFolder: your sharepoint root folder
+dlRootFolder: ./downloads
+datasetMappingCsv: eth_sharepoint_data_map_GT.csv (this csv contains all the datasets you want to update with info about the datasets)
+srcDataFolder: your downloads dir
+socrata_client_config_fname: socrata_config.yaml
+exception_logfile: exceptions.log
+log_dir: full path to your log dir
+app_name: Upload ETH Datasets from Sharepoint Site
+row_id_field: row_id
+dataset_name_field: Socrata Dataset Name
+fourXFour: fourXFour
+dataset_records_cnt_field: DatasetRecordsCnt
+isLoaded: isLoaded
+src_records_cnt_field: SrcRecordsCnt
+base_url: data.sfgov.org
+base_url_qry: 'https://data.sfgov.org/resource/'
+config_dir: /home/ubuntu/sharepoint-data-to-open-data-portal/configs/
+email_config_file: email_config_server.yaml
+password: your password, generated
