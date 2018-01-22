@@ -68,8 +68,10 @@ sppull(context, options)
     console.log('For more, please check the results', JSON.stringify(downloadResults))
   })
   .catch(function (err) {
+    console.log(downloadResults)
     console.log('Core error has happened', err)
+    console.log(err)
     // send the message and get a callback with an error or details of the message that was sent
-    emailServer.send( emailServerFailureMsg + err, function(err, message) { console.log(err || message); });
+    emailServer.send( emailServerFailureMsg, function(err, message) { console.log(err || message); });
 
   })
