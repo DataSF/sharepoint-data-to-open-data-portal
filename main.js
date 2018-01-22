@@ -42,8 +42,8 @@ let emailServer = email.server.connect({
 const emailServerFailureMsg = {
    text:    emailConfigs.etl_failure_msg, 
    from:    emaillConfigs.etl_sender_addr, 
-   to:      emailConfigs.etl_recipients
-   subject: emailConfigs.etl_failure_subject
+   to:      emailConfigs.etl_recipients,
+   subject: emailConfigs.etl_failure_subject,
 }
  
 
