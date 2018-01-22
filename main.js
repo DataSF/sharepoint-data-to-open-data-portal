@@ -70,6 +70,6 @@ sppull(context, options)
   .catch(function (err) {
     console.log('Core error has happened', err)
     // send the message and get a callback with an error or details of the message that was sent
-    emailServer.send( emailServerFailureMsg, function(err, message) { console.log(err || message); });
+    emailServer.send( emailServerFailureMsg + err, function(err, message) { console.log(err || message); });
 
   })
