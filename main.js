@@ -30,7 +30,7 @@ const context = {
   siteUrl: configs.siteUrl,
   creds: {
     username: configs.username,
-    password: cpass.decode(configs.password) + "blahblahblahhhhhhhh"
+    password: cpass.decode(configs.password)
   }
 }
 
