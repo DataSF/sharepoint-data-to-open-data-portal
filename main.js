@@ -12,7 +12,7 @@ function readConfigs (fn) {
 const configsFn = './configs/secured_config.yaml'
 const configs = readConfigs(configsFn)
 
-const emailConfigFn './configs/email_config_server.yaml'
+const emailConfigFn  = './configs/email_config_server.yaml'
 const emailConfigs = readConfigs(emailConfigFn)
 // remove all files in the directory before downloading
 
