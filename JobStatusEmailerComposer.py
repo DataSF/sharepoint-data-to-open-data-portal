@@ -49,9 +49,9 @@ class JobStatusEmailerComposer:
 
     def getJobStatus(self):
         if self.failure:
-            return  "FAILED: " + self.job_name
+            return  "JOB FAILURE: " + self.job_name + " failed"
         else:
-            return  "SUCCESS: " + self.job_name
+            return  "JOB SUCCESS: " + self.job_name + " completed"
 
     def makeJobStatusMsg( self,  dataset  ):
         msg = dataset['jobStatus'] + ": " + dataset[self.datasetNameField] + "-> Total Rows:" + str(dataset[self.source_records_cnt]) + ", Rows Inserted: " + str(dataset[self.rowsInserted])  + ", Link: http://"  + self.dataset_base_url + "/resource/" + dataset[self.fourXFour] + " <br><br> "
