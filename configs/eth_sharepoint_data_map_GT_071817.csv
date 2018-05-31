@@ -1,12 +1,12 @@
 dataset_name,file_name,target_fbf
-Post- Employment Restriction Waivers,Post_Employment_Restriction_Waivers_dataset.csv,bvte-yw69
-Filers With Unpaid Late Filing Fees ,Filers_With_Unpaid_Late_Filing_Fees.csv,bewd-y8j6
-Campaign Finance - San Francisco Campaign Committees and Other Campaign Filers,Campaign_Finance_San_Francisco_Campaign_Committees_and_Other_Campaign_Filers.csv,by53-wrhr
-Campaign Finance - Summary Of Third Party Disclosure Forms Regarding San Francisco Candidates,Campaign_Finance_Summary_Of_Third_Party_Disclosure_Forms_Regarding_San_Francisco_Candidates.csv,ani6-nqh6
-Campaign Finance - Public Funds Disbursed,Campaign_Finance_Public_Funds_Disbursed.csv,n5cw-2wcg
-Campaign Finance - Status Of Voluntary Expenditure Ceiling VECs,Campaign_Finance_Status_Of_Voluntary_Expenditure_Ceiling_VECs.csv,ta8e-i7h7
-Campaign Finance - List Of Candidates Running For Office Who Have Accepted VEC,Campaign_Finance_List_Of_Candidates_Running_For_Office_Who_Have_Accepted_VEC.csv,hb4s-gb49
-Campaign Finance - Individual Expenditure Ceilings (IEC),Campaign_Finance_Individual_Expenditure_Ceilings_IEC.csv,ivp9-fpdq
-Statement of Economic Interests (SEI) (Form 700) - Filing Officers and Department Heads,Statement_of_Economic_Interests_SEI_Form_700_Filing_Officers_and_Department_Heads.csv,e6zx-y499
-Compensated Advocacy Ban Waivers,Compensated_Advocacy_Ban_Waivers.csv,ar9t-p5eu
-Annual Statement of Economic Interests (SEI) Form 700 - Non-Filers,Annual_Statement_of_Economic_Interests_SEI_Form_700_Non-Filers.csv,un6s-gxbd
+Post- Employment Restriction Waivers,Post_Employment_Restriction_Waivers_dataset.csv,qwnt-35i6,http://data.sfgov.org/d/qwnt-35i6 
+Filers With Unpaid Late Filing Fees ,Filers_With_Unpaid_Late_Filing_Fees.csv,qbyp-dnir,https://data.sfgov.org/d/qbyp-dnir
+Campaign Finance - San Francisco Campaign Committees and Other Campaign Filers,Campaign_Finance_San_Francisco_Campaign_Committees_and_Other_Campaign_Filers.csv,t7mf-3ftv,http://data.sfgov.org/d/t7mf-3ftv
+Campaign Finance - Summary Of Third Party Disclosure Forms Regarding San Francisco Candidates,Campaign_Finance_Summary_Of_Third_Party_Disclosure_Forms_Regarding_San_Francisco_Candidates.csv,ani6-nqh6,https://data.sfgov.org/d/ani6-nqh6
+Campaign Finance - Public Funds Disbursed,Campaign_Finance_Public_Funds_Disbursed.csv,dbak-p2fq,https://data.sfgov.org/d/dbak-p2fq
+Campaign Finance - Status Of Voluntary Expenditure Ceiling VECs,Campaign_Finance_Status_Of_Voluntary_Expenditure_Ceiling_VECs.csv,ct8k-kggq,https://data.sfgov.org/d/ct8k-kggq
+Campaign Finance - List Of Candidates Running For Office Who Have Accepted VEC,Campaign_Finance_List_Of_Candidates_Running_For_Office_Who_Have_Accepted_VEC.csv,uvqv-zi4r,https://data.sfgov.org/d/uvqv-zi4r
+Campaign Finance - Individual Expenditure Ceilings (IEC),Campaign_Finance_Individual_Expenditure_Ceilings_IEC.csv,9gib-7p8x,https://data.sfgov.org/d/9gib-7p8x
+Statement of Economic Interests (SEI) (Form 700) - Filing Officers and Department Heads,Statement_of_Economic_Interests_SEI_Form_700_Filing_Officers_and_Department_Heads.csv,kg3i-kae6,http://data.sfgov.org/d/kg3i-kae6
+Compensated Advocacy Ban Waivers,Compensated_Advocacy_Ban_Waivers.csv,fa66-656n,http://data.sfgov.org/d/fa66-656n
+Annual Statement of Economic Interests (SEI) Form 700 - Non-Filers,Annual_Statement_of_Economic_Interests_SEI_Form_700_Non-Filers.csv,un6s-gxbd,https://data.sfgov.org/d/un6s-gxbd
