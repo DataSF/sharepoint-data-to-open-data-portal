@@ -7,3 +7,6 @@ socrata_config.yam
 node_modules/*
 logs/*
 configs/socrata_config.yaml
+
+
+.DS_Store
