@@ -2,6 +2,7 @@
 #!/usr/bin/env python
 
 import pandas as pd
+import numpy as np
 import json
 from pandas.io.json import json_normalize
 import unicodedata as ucd
@@ -43,7 +44,7 @@ class PandasUtils:
   def loadCsv(fullpath):
     df = None
     try:
-     df = pd.read_csv(fullpath,  encoding='cp1252')
+     df = pd.read_csv(fullpath,  encoding='cp1252', converters={'Year': str, 'Quarter': str})
     except Exception, e:
       print str(e)
     return df
@@ -51,6 +52,10 @@ class PandasUtils:
   @staticmethod
   def fillNaWithBlank(df):
     return df.fillna("")
+
+  @staticmethod
+  def remove_dot_zero(df):
+    return df.replace(to_replace=r'\.0$',value='',regex=True)
 
   @staticmethod
   def makeDfFromJson(json_obj):
@@ -66,7 +71,8 @@ class PandasUtils:
   @staticmethod
   def convertDfToDictrows(df):
     if (not(df is None)):
-      return df.to_dict(orient='records')
+      #return df.to_dict(orient='records')
+      return json.loads(df.to_json(orient='records'))
     return []
 
   @staticmethod

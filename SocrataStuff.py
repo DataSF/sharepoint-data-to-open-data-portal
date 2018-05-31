@@ -80,6 +80,7 @@ class SocrataCRUD:
     #@retry( tries=5, delay=1, backoff=2)
     def insertDataSet(self, dataset, insertDataSet):
         insertChunks = self.makeChunks(insertDataSet)
+        #print insertChunks[0]
         print "Number of chunks : " + str(len(insertChunks))
         #overwrite the dataset on the first insert chunk[0] if there is no row id
         if dataset[self.rowsInserted] == 0 and dataset[self.row_id ] == '':
@@ -112,6 +113,7 @@ class SocrataCRUD:
     #@retry( tries=10, delay=1, backoff=2)
     def insertData(self, dataset, chunk):
         result = self.client.upsert(dataset[self.fourXFour], chunk)
+        print dataset[self.fourXFour]
         dataset[self.rowsInserted] = dataset[self.rowsInserted] + int(result['Rows Created']) + int(result['Rows Updated'])
         time.sleep(0.25)
 

@@ -60,15 +60,16 @@ def parseFile(directory, dataset):
   #@print "******"
   #print dataset
   df_dataset = PandasUtils.loadCsv(directory+ "/"+ dataset['file_name'])
-  print 
-  #print df_dataset
-  df_dataset =  PandasUtils.fillNaWithBlank(df_dataset)
+  print dataset['file_name']
+  df_dataset = PandasUtils.fillNaWithBlank(df_dataset)
+  df_dataset = PandasUtils.remove_dot_zero(df_dataset)
+  #print df_dataset.head(10)
   df_dataset_cols = list(df_dataset.columns)
-  df_dataset_cols_lower =  [column.lower().replace(" ", "_").replace("-", "_").replace("/", "_") for column in df_dataset_cols]
+  df_dataset_cols_lower =  [column.lower().replace(" ", "_").replace("-", "_").replace("/", "_").replace("(","_").replace(")","_").replace("__","_").rstrip('_') for column in df_dataset_cols]
   field_mapping_dict = dict(zip(df_dataset_cols,  df_dataset_cols_lower ))
   df_dataset = PandasUtils.mapFieldNames(df_dataset, field_mapping_dict)
   dataset_dictList = PandasUtils.convertDfToDictrows(df_dataset)
-  return [ DictUtils.filterDictOnBlanks(dataset)for dataset in dataset_dictList]
+  return [ DictUtils.filterDictOnBlanks(dataset) for dataset in dataset_dictList]
 
 def main():
   dataset_results = []
